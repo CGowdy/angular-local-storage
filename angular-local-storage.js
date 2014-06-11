@@ -136,7 +136,7 @@ angularLocalStorage.provider('localStorageService', function() {
         }
         if (webStorage) {webStorage.setItem(deriveQualifiedKey(key), value)};
         if (notify.setItem) {
-          $rootScope.$broadcast('LocalStorageModule.notification.setitem', {key: key, newvalue: value, storageType: this.storageType});
+          $rootScope.$broadcast('LocalStorageModule.notification.setitem', {key: key, newvalue: value, storageType: storageType});
         }
       } catch (e) {
         $rootScope.$broadcast('LocalStorageModule.notification.error', e.message);
@@ -182,7 +182,7 @@ angularLocalStorage.provider('localStorageService', function() {
       try {
         webStorage.removeItem(deriveQualifiedKey(key));
         if (notify.removeItem) {
-          $rootScope.$broadcast('LocalStorageModule.notification.removeitem', {key: key, storageType: this.storageType});
+          $rootScope.$broadcast('LocalStorageModule.notification.removeitem', {key: key, storageType: storageType});
         }
       } catch (e) {
         $rootScope.$broadcast('LocalStorageModule.notification.error', e.message);
