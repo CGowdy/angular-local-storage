@@ -241,7 +241,6 @@ angularLocalStorage.provider('localStorageService', function() {
             removeFromLocalStorage(key.substr(prefixLength));
           } catch (e) {
             $rootScope.$broadcast('LocalStorageModule.notification.error',e.message);
-            return clearAllFromCookies();
           }
         }
       }
