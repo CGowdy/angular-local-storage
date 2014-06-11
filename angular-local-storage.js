@@ -373,7 +373,7 @@ angularLocalStorage.provider('localStorageService', function() {
     var clearAllFromCookies = function () {
       var thisCookie = null, thisKey = null;
       var prefixLength = prefix.length;
-      var cookies = $document.cookie.split(';');
+      var cookies = $document.cookie ? $document.cookie.split(';') : [];
       for(var i = 0; i < cookies.length; i++) {
         thisCookie = cookies[i];
         
